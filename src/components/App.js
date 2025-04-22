@@ -7,12 +7,14 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <div>
-      <LoginForm
-        isLoggedIn={isLoggedIn}
-        setIsLoggedIn={setIsLoggedIn}
-      />
-      {isLoggedIn && <p>You are logged in!</p>
-}
+      {isLoggedIn ? (
+        <p>You are logged in!</p>
+      ) : (
+        <LoginForm
+          isLoggedIn={isLoggedIn}
+          setIsLoggedIn={setIsLoggedIn}
+        />
+      )}
     </div>
   )
 }
